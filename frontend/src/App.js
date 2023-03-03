@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import User from './Component/User';
+ 
+ 
 
 function App() {
   return (
     <div className="App">
-       hello
+    
+      
+    <User/>
     </div>
   );
 }
