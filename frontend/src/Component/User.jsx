@@ -49,6 +49,7 @@ export default function User( ) {
         name: user.name,
         email: user.email,
         phone: user.phone,
+        website:user.website
       });
     
     };
@@ -63,6 +64,7 @@ export default function User( ) {
           name: values.name,
           email: values.email,
           phone: values.phone,
+          website:values.website
         };
       } else {
         return user;
@@ -109,13 +111,16 @@ export default function User( ) {
         onOk={handleEditSubmit}
        >
        <Form form={editForm}>
-          <Form.Item label="Name" name="name">
+          <Form.Item label="Name" name="name"  rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item label="Email" name="email">
+          <Form.Item label="Email" name="email"   rules={[{ required: true, type: 'email',  message: "Invalid email",}]}>
             <Input />
           </Form.Item>
-          <Form.Item label="Phone" name="phone">
+          <Form.Item label="Phone" name="phone"  rules={[{ required: true }]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Website" name="website"  rules={[{ required: true, type: 'url' }]}>
             <Input />
           </Form.Item>
         </Form>

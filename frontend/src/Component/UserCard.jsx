@@ -21,16 +21,18 @@ const handelClick=()=>{
                   <div className='user-id'> 
                    <div> <MailOutlined />   <p>  {user.email}</p></div>  
                    <div> <PhoneOutlined /> <p> {user.phone}</p></div>  
-                    <div> <GlobalOutlined /> <p> {user.website}</p></div> 
+                    <div> <GlobalOutlined /> <p> http://{user.website}</p></div> 
                     </div>
                     <div className='user-icons' onClick={handelClick}>
-                     
-                        {clicked ? (
+                     <div className='boder'>{clicked ? (
                           <HeartFilled style={{ color: 'red' }} />
                                  ) : (
                              <HeartOutlined   style={{ color: 'red' }} />
-                            )}
-                        | <EditOutlined className='edit'  key="edit" onClick={() =>handleEditClick(user)} /> | <DeleteFilled className='edit' key="delete"    onClick={() => handleDelete(user.id)} /></div>
+                            )}</div>
+                         
+                         <div className='boder'>  <EditOutlined className='edit'  key="edit" onClick={() =>handleEditClick(user)} /> </div>
+                        <div className='delete'>  <DeleteFilled className='edit' key="delete"    onClick={() => handleDelete(user.id)} /></div>
+                        </div>
             
                 </Card>
   )
